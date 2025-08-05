@@ -9,6 +9,8 @@ Ele simula um sistema básico de gerenciamento de postagens com operações CRUD
 - Node.js (Back-End)
 - Express.js (Middleware)
 - MongoDB (Banco de Dados)
+- MongoDB Atlas (Hospedagem do Banco de Dados)
+- MongoDB Compass (Banco de Dados GUI)
 - Docker (Containers)
 - Mongoose (ODM)
 - Jest & Supertest (Testes Unitários)
