@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "2ca86f54-a30c-4959-98f0-c738b269db93",
+		"name": "Tech Challenge 2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45304213",
+		"_collection_link": "https://gabrielmachado-842616.postman.co/workspace/Gabriel-Machado's-Workspace~ad76ec21-f7ab-4ed3-8e04-adca619551ca/collection/45304213-2ca86f54-a30c-4959-98f0-c738b269db93?action=share&source=collection_link&creator=45304213"
+	},
+	"item": [
+		{
+			"name": "GET DATABASE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}",
+					"host": [
+						"{{localhost}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET POSTS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET POSTS BY ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Testing\",\r\n  \"content\": \"Testing\",\r\n  \"author\": \"Gabriel L Machado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts/68916f94774d67ea715b6b5e",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"68916f94774d67ea715b6b5e"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE POST UNAUTHORIZED",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My Fourth Post\",\r\n  \"content\": \"This is a test post\",\r\n  \"author\": \"Gabriel L Machado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CREATE POST AUTHORIZED",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-user-type",
+						"value": "teacher",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"My First Post\",\r\n  \"content\": \"This is a test post\",\r\n  \"author\": \"Gabriel L Machado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE POST UNAUTHORIZED",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Update\",\r\n  \"content\": \"Test Update\",\r\n  \"author\": \"Carolina K\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts/689176cb7f727385f48a6a12",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"689176cb7f727385f48a6a12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE POST AUTHORIZED",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "x-user-type",
+						"value": "teacher",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Test Update\",\r\n  \"content\": \"Test Update\",\r\n  \"author\": \"Carolina K\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts/68925137e16a18894532bb73",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"68925137e16a18894532bb73"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE POST UNAUTHORIZED",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/posts/689176cb7f727385f48a6a12",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"689176cb7f727385f48a6a12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE POST AUTHORIZED",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "x-user-type",
+						"value": "teacher",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{localhost}}/posts/68925137e16a18894532bb73",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"68925137e16a18894532bb73"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET POSTS BY SEARCH",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts/search?query=Test Update",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"search"
+					],
+					"query": [
+						{
+							"key": "query",
+							"value": "Test Update"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET POSTS BY AUTHOR",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"title\": \"Testing\",\r\n  \"content\": \"Testing\",\r\n  \"author\": \"Gabriel L Machado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/posts/author/Gabriel%20L%20Machado",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"posts",
+						"author",
+						"Gabriel%20L%20Machado"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "localhost",
+			"value": "http://localhost:3000",
+			"type": "default"
+		}
+	]
+}
