@@ -16,7 +16,6 @@ Ele simula um sistema básico de gerenciamento de postagens com operações CRUD
 - Jest & Supertest (Testes Unitários)
 - GitHub Actions (CI/CD)
 - Render (Hospedagem em Nuvem)
-- MongoDB Atlas (Hospedagem do Banco de Dados)
 - Postman (Testes de API)
 
 
