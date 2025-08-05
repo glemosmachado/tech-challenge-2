@@ -8,8 +8,8 @@ services:
       - '3000:3000' 
     depends_on:
       - mongo 
-    environment:
-      - MONGODB_URI=mongodb://mongo:27017/blogdb 
+    env_file:
+      - .env
     volumes:
       - .:/app 
     restart: unless-stopped
