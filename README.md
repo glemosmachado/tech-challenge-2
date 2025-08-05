@@ -1,4 +1,4 @@
-# TechChallenge - Projeto 1  
+# TechChallenge - Projeto 2  
 **Autor:** Gabriel Machado - RM362607  
 
 Este projeto é uma API RESTful construída com Node.js, Express e MongoDB, containerizada com Docker. 
