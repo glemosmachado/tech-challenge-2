@@ -1,20 +1,29 @@
-const express = require('express')
-const app = express()
-const port = 3000
-require('dotenv').config();
+const express = require('express');
 const mongoose = require('mongoose');
+require('dotenv').config();
 
-mongoose.connect(process.env.MONGODB_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
-.then(() => console.log('Connection to MongoDB'))
-.catch((err) => console.error('MongoDB error', err));
+const postsRoutes = require('./routes/postsRoutes');
 
-app.get('/', (req, res) =>{
-    res.send('Test')
-})
+const app = express();
+const port = 3000;
 
+// Middleware
+app.use(express.json());
+
+// Connection to MongoDB
+mongoose.connect(process.env.MONGODB_URI)
+    .then(() => console.log('Connection to MongoDB'))
+    .catch((err) => console.error('MongoDB error', err));
+
+// Routes
+app.use('/posts', postsRoutes);
+
+// Base Route
+app.get('/', (req, res) => {
+    res.send('API is live');
+});
+
+// Server On
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
+    console.log(`Server running on port: ${port}`);
+});
