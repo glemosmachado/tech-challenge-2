@@ -16,7 +16,7 @@ Ele simula um sistema básico de gerenciamento de postagens com operações CRUD
 - Jest & Supertest (Testes Unitários)
 - GitHub Actions (CI/CD)
 - Render (Hospedagem em Nuvem)
-- Postman (Testes de API)
+- Postman (Testes de API).
 
 
 ## Funcionalidades
