@@ -1,14 +1,21 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 require('dotenv').config();
 
 const postsRoutes = require('./routes/postsRoutes');
-
 const app = express();
 const port = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.json());
+
+//Enabling CORS
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'x-user-type']
+}));
 
 // Connection to MongoDB
 mongoose.connect(process.env.MONGODB_URI)
